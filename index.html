@@ -1,1 +1,224 @@
-test website
+<!-- Reality Check Game -->
+<!-- NMA 322 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Reality Check</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- really basic, only a main div, then a character img, and a bg img -->
+    <div id="game-area">
+
+        <img id="bg-layer" src="" alt="background"> <!-- this the background!!!! -->
+        <img id="char-layer" src="" alt="character"> <!-- this the char!!!!!! -->
+
+        <!-- this is where the dialog is -->
+        <div id="dialog-box">
+            <div id="passage-text"></div>
+            <div id="choices"></div>
+            <div id="error"></div>
+        </div>
+    </div>
+
+    <!-- and all the codeeeeeee -->
+    <script>
+
+        // just loads the twee file
+        async function LoadDialogFile() {
+            const res = await fetch("dialog.twee");
+            if (!res.ok) throw new Error("Could not load dialog.twee");
+            return await res.text();
+        }
+
+        // so we dont include the options in the displayed text
+        function ExtractDialogText(text) {
+            const lines = text.split(/\r?\n/);
+            const keep = [];
+            const linkOnlyLine = /^\s*(\[\[.+?\]\]\s*)+$/; // one or more [[...]] and nothing else
+
+            for (const line of lines) {
+                // if the line is ONLY the dialog options (like [[Hello]] or [[Hello]][[Bye]]) we dont include it
+                if (linkOnlyLine.test(line)) continue;
+                keep.push(line);
+            }
+
+            let body = keep.join("\n");
+            body = body.replace(/\[\[(.+?)(->|<-)(.+?)\]\]/g, (_, p1) => p1.trim()).replace(/\[\[(.+?)\]\]/g, (_, p1) => p1.trim());
+            return body.trim();
+        }
+
+        // from the twee file. we convert it to text, and we run the function to get the choices too
+        function parseTwee(tweeText) {
+            const lines = tweeText.split(/\r?\n/);
+            const story = { passages: {}, start: null };
+            let current = null;
+            let buffer = [];
+            function finishPassage() {
+                if (!current) return;
+                current.text = buffer.join("\n").trim();
+                current.links = GetDialogChoices(current.text);
+                story.passages[current.name] = current;
+                if (!story.start) story.start = current.name;
+                buffer = [];
+            }
+            for (let line of lines) {
+                const m = /^::\s*(.+)$/.exec(line);
+                if (m) {
+                    finishPassage();
+                    let header = m[1].trim();
+                    let name = header
+                        .replace(/\{.*?\}/g, "")
+                        .replace(/\[.*?\]/g, "")
+                        .trim();
+
+                    current = { name, text: "", links: [] };
+                } else {
+                    buffer.push(line);
+                }
+            }
+            finishPassage();
+            const sd = /"start":\s*"(.+?)"/.exec(tweeText);
+            if (sd) story.start = sd[1];
+            return story;
+        }
+
+        // extracts the dialog choices from the text
+        function GetDialogChoices(text) {
+            const links = [];
+            const re = /\[\[(.+?)\]\]/g;
+            let match;
+
+            while (match = re.exec(text)) {
+                const inner = match[1];
+                let label, target;
+
+                if (inner.includes("->")) {
+                    [label, target] = inner.split("->").map(s => s.trim());
+                } else if (inner.includes("<-")) {
+                    [target, label] = inner.split("<-").map(s => s.trim());
+                } else {
+                    label = target = inner.trim();
+                }
+
+                links.push({ label, target });
+            }
+            return links;
+        }
+
+        // typewriter effect for text display
+        function typeText(element, text, speed = 25) {
+            return new Promise(resolve => {
+                element.textContent = "";
+
+                // basically we only want the text AFTER the colon to be typed out
+                // so that the char name shows up instantly
+                const colonIndex = text.indexOf(":");
+
+                let prefix = "";
+                let toType = text;
+
+                // if there is a colon, we split the text
+                if (colonIndex !== -1) {
+                    prefix = text.slice(0, colonIndex + 1);
+                    toType = text.slice(colonIndex + 1).trimStart();
+                    element.textContent = prefix + " ";
+                }
+
+                let i = 0;
+
+                // then this is the loop that types each character out
+                function step() {
+                    if (i < toType.length) {
+                        element.textContent += toType[i++];
+                        setTimeout(step, speed);
+                    } else {
+                        resolve();
+                    }
+                }
+
+                step();
+            });
+        }
+
+        // this is what we call each time we want to show a new message
+        // handles the bg, char images, message text, and choices
+        async function RenderPage(story, name) {
+
+            const p = story.passages[name];
+            const text = document.getElementById("passage-text");
+            const choices = document.getElementById("choices");
+            const error = document.getElementById("error");
+
+            if (!p) {
+                text.textContent = "";
+                choices.innerHTML = "";
+                error.textContent = `Passage "${name}" does not exist`;
+                return;
+            }
+
+            error.textContent = "";
+
+            const shown = ExtractDialogText(p.text);
+
+            // bg and char image changing
+            function setBackground(url) {
+                document.getElementById("bg-layer").src = url;
+            }
+
+            function setCharacter(url) {
+                document.getElementById("char-layer").src = url;
+            }
+
+            // im just using shit stock photos for now. when we get the art assets this will look much nicer :)
+            setBackground("/Assets/StockRoomExample.jpg");
+
+            // just testing changing imgs based on who is talkign
+            // basically searching the dialogue text for a name. for example we can do "Olivia" and show the specific image for the Olivia character
+            if (shown.includes("Character Name")) {
+                setCharacter("/Assets/StockCharacterExample.png");
+            }
+
+            // just an example of the character leaving the scene
+            if (name === "Bye") {
+                setCharacter("");
+            }
+
+            choices.innerHTML = ""; // clear previous choices
+
+            await typeText(text, shown);
+
+            // when there are no more choices, u show a button that resets the game
+            if (p.links.length === 0) {
+                const tryBtn = document.createElement("button");
+                tryBtn.classList.add("try-again");
+                tryBtn.textContent = "reset back to start";
+                tryBtn.onclick = () => RenderPage(story, story.start);
+                choices.appendChild(tryBtn);
+                return;
+            }
+
+            // create buttons for each choices
+            p.links.forEach(link => {
+                const btn = document.createElement("button");
+                btn.classList.add("choice-btn");
+                btn.textContent = link.label;
+                btn.onclick = () => RenderPage(story, link.target);
+                choices.appendChild(btn);
+            });
+        }
+
+        // run this only once at start
+        (async () => {
+            const twee = await LoadDialogFile();
+            const story = parseTwee(twee);
+            RenderPage(story, story.start);
+        })();
+    </script>
+</body>
+
+</html>
