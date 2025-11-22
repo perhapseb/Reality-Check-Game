@@ -35,7 +35,7 @@
             return await res.text();
         }
 
-        // so we dont include the options in the displayed text
+        // so we dont include the options in the displayed text using regex
         function ExtractDialogText(text) {
             const lines = text.split(/\r?\n/);
             const keep = [];
@@ -52,7 +52,7 @@
             return body.trim();
         }
 
-        // from the twee file. we convert it to text, and we run the function to get the choices too
+        // from the twee file. we convert it to text, and we run this function to get the dialog and the choices too
         function parseTwee(tweeText) {
             const lines = tweeText.split(/\r?\n/);
             const story = { passages: {}, start: null };
@@ -126,7 +126,7 @@
                 if (colonIndex !== -1) {
                     prefix = text.slice(0, colonIndex + 1);
                     toType = text.slice(colonIndex + 1).trimStart();
-                    element.textContent = prefix + " ";
+                    element.textContent = prefix + "\n";
                 }
 
                 let i = 0;
@@ -174,11 +174,11 @@
                 document.getElementById("char-layer").src = url;
             }
 
-            // im just using shit stock photos for now. when we get the art assets this will look much nicer :)
-            setBackground("/Assets/StockRoomExample.jpg");
+            // im just using blank images i made in photoshop for now. when we get the art assets this will look much nicer :)
+            setBackground("/Assets/StockRoomExample.png");
 
             // just testing changing imgs based on who is talkign
-            // basically searching the dialogue text for a name. for example we can do "Olivia" and show the specific image for the Olivia character
+            // basically searching the dialogue text for a name. for example we can do "Olivia:" and show the specific image for the Olivia character
             if (shown.includes("Character Name")) {
                 setCharacter("/Assets/StockCharacterExample.png");
             }
@@ -188,9 +188,9 @@
                 setCharacter("");
             }
 
-            choices.innerHTML = ""; // clear previous choices
+            choices.innerHTML = ""; // clear previous choice buttons for the last page
 
-            await typeText(text, shown);
+            await typeText(text, shown); // we wait for the typewriter effect to finish before we show the choices
 
             // when there are no more choices, u show a button that resets the game
             if (p.links.length === 0) {
