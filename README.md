@@ -8,6 +8,7 @@ You can test the game out on the Github Page:
 https://perhapseb.github.io/Reality-Check-Game/
 
 Credits:
+
 Alfonso Manila, Jaleia Tani - <b>The Illustrators</b>
 
 Vagishan Soosaithan, Sebastian Culinac - <b>The Coders</b>
