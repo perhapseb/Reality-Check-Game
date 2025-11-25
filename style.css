@@ -42,7 +42,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 4vh;
+    padding: 2vh;
     background: rgba(20, 20, 20, 0.55);
     backdrop-filter: blur(1vh);
     border-top: 0.5vh solid rgba(255, 255, 255, 0.1);
@@ -58,8 +58,8 @@ body {
 #passage-text {
     font-size: 2.2vh;
     line-height: 3.4vh;
-    padding: 1vh;
-    margin-bottom: 3vh;
+    padding: 0.5vh;
+    margin-bottom: 2vh;
     white-space: pre-wrap;
 }
 
@@ -95,7 +95,6 @@ body {
 }
 
 #error {
-    font-size: 2.6vh;
-    margin-top: 0.5vh;
+    font-size: 2vh;
     color: #ff6b6b;
 }

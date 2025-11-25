@@ -170,7 +170,7 @@
             if (!p) {
                 text.textContent = "";
                 choices.innerHTML = "";
-                error.textContent = `Passage "${name}" does not exist`;
+                error.textContent = `Could not find the message for dialog option "${name}". Make sure there are no trailing/leading spaces within the dialog choices in the .twee file.`;
                 return;
             }
 

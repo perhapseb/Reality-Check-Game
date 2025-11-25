@@ -1,5 +1,5 @@
 :: StoryTitle
-Untitled Story
+Reality Check Dialogue
 
 
 :: StoryData
@@ -23,34 +23,33 @@ Untitled Story
 [[*Grabs her*]]
 
 
+:: *Claire smiles, shrugs and walks away* {"position":"1375,1150","size":"100,100"}
+[[Scenario 3]]
 
-:: *Claire smiles and walks away* {"position":"1400,1200","size":"100,100"}
-[[Scenario 3]] 
 
-
-:: *Grabs her* {"position":"1200,900","size":"100,100"}
+:: *Grabs her* {"position":"1175,850","size":"100,100"}
 Claire: “...”
 
-[[*Incel gives a weird smile* ]] 
+[[*Incel gives a weird smile* ]]
 
 
-:: *Incel gives a weird smile*\  {"position":"900,900","size":"100,100"}
+:: *Incel gives a weird smile*\  {"position":"900,1000","size":"100,100"}
 Claire: Yo dude what is wrong with you?! *hits him with her bag*
 
 [[Incel was too drunk to remember the rest…]]
 
 
-:: *Incel tries to talk more* {"position":"1500,1000","size":"100,100"}
+:: *Incel tries to talk more* {"position":"1475,1000","size":"100,100"}
 Claire:
 
-[[Incel was too drunk to remember the rest…]] 
-[[*Claire smiles and walks away*]]
+[[*Incel gives a weird smile* ]] 
+[[*Claire smiles, shrugs and walks away*]]
 
 
 :: Ask for her number {"position":"900,500","size":"100,100"}
 Olivia: “Uhhhh, okay?” *gives him a number to pizza hut*
 
-[[Scenario 2]] 
+[[Scenario 2]]
 
 
 :: H-hey babygirl, you look stunning today. {"position":"1300,300","size":"100,100"}
@@ -59,7 +58,7 @@ Olivia: Ugh, get away from me creep! *skates away*
 [[*Angrily goes about his day*]]
 
 
-:: Incel was too drunk to remember the rest… {"position":"800,1200","size":"100,100"}
+:: Incel was too drunk to remember the rest… {"position":"875,1200","size":"100,100"}
 [[Scenario 3]]
 
 
@@ -72,7 +71,6 @@ Skating rink in Harbourfront, bustling with people of all ages, incel is joined 
 [[H-hey babygirl, you look stunning today.]]
 
 
-
 :: Scenario 2 {"position":"1100,700","size":"100,100"}
 The Imperial Pub, Many students going for a drink and musicians and bands from TMU are invited to perform open mic. Claire is the guitarist and vocalist for a local Toronto shoegaze band. The incel goes to watch because “she looks like an anime girl”
 
@@ -83,6 +81,8 @@ The Imperial Pub, Many students going for a drink and musicians and bands from T
 
 
 :: Scenario 3 {"position":"1200,1400","size":"100,100"}
+Setting: TRSM - Incel walks into his lower liberal class hungover because he was so sad that he wasn’t able to bag that asian baddie lmao. Sits next to Camilla, the ace of the TMU volleyball team.
+
 
 
 
