@@ -1,43 +1,92 @@
 :: StoryTitle
-Reality Check
+Untitled Story
 
 
 :: StoryData
 {
-  "ifid": "FFBC39C6-575A-4328-8D7C-4D7CCEB9ABDD",
+  "ifid": "97E9307B-73FE-40E9-902D-FFE1A9C54636",
   "format": "Harlowe",
   "format-version": "3.3.9",
-  "start": "Untitled Passage",
+  "start": "Scenario 1",
   "zoom": 1
 }
 
 
-:: Bye {"position":"1175,550","size":"100,100"}
-Character Name: 
-Leave me alone.
-
-[[Okay...]]
+:: *Angrily goes about his day* {"position":"1300,500","size":"100,100"}
+[[Scenario 2]]
 
 
-:: Hello {"position":"975,550","size":"100,100"}
-Character Name: 
-Hi!!
+:: *Avoids her gaze* “H-hey you look like that girl from this anime…” {"position":"1400,800","size":"100,100"}
+*Claire gives him an awkward smile* Thanks…
 
-[[Okay...]]
-
-
-:: Okay... {"position":"1075,725","size":"100,100"}
-Character Name: 
-Both dialogs reach this point.
+[[*Incel tries to talk more*]]
+[[*Grabs her*]]
 
 
-:: Untitled Passage {"position":"1050,425","size":"100,100"}
-Character Name: 
-Hi there.
 
-[[Hello]]
-[[Bye]]
+:: *Claire smiles and walks away* {"position":"1400,1200","size":"100,100"}
+[[Scenario 3]] 
 
 
-:: note1 {"position":"1225,350","size":"100,100"}
-shitty template but u get it
+:: *Grabs her* {"position":"1200,900","size":"100,100"}
+Claire: “...”
+
+[[*Incel gives a weird smile* ]] 
+
+
+:: *Incel gives a weird smile*\  {"position":"900,900","size":"100,100"}
+Claire: Yo dude what is wrong with you?! *hits him with her bag*
+
+[[Incel was too drunk to remember the rest…]]
+
+
+:: *Incel tries to talk more* {"position":"1500,1000","size":"100,100"}
+Claire:
+
+[[Incel was too drunk to remember the rest…]] 
+[[*Claire smiles and walks away*]]
+
+
+:: Ask for her number {"position":"900,500","size":"100,100"}
+Olivia: “Uhhhh, okay?” *gives him a number to pizza hut*
+
+[[Scenario 2]] 
+
+
+:: H-hey babygirl, you look stunning today. {"position":"1300,300","size":"100,100"}
+Olivia: Ugh, get away from me creep! *skates away*
+ 
+[[*Angrily goes about his day*]]
+
+
+:: Incel was too drunk to remember the rest… {"position":"800,1200","size":"100,100"}
+[[Scenario 3]]
+
+
+:: Scenario 1 {"position":"1100,100","size":"100,100"}
+Skating rink in Harbourfront, bustling with people of all ages, incel is joined by his other weird friends to “look for hot girls”, spots one.
+
+*He nervously goes up to Olivia after some weird fantasy of her across the rink.*
+
+[[Woah! *bumps into Olivia awkwardly*]]
+[[H-hey babygirl, you look stunning today.]]
+
+
+
+:: Scenario 2 {"position":"1100,700","size":"100,100"}
+The Imperial Pub, Many students going for a drink and musicians and bands from TMU are invited to perform open mic. Claire is the guitarist and vocalist for a local Toronto shoegaze band. The incel goes to watch because “she looks like an anime girl”
+
+*Incel stares too long at Claire, she notices*
+
+[[*Incel gives a weird smile* ]]
+[[*Avoids her gaze* “H-hey you look like that girl from this anime…”]]
+
+
+:: Scenario 3 {"position":"1200,1400","size":"100,100"}
+
+
+
+:: Woah! *bumps into Olivia awkwardly* {"position":"900,300","size":"100,100"}
+Olivia: Hey, you okay? *helps him up after brushing the ice off*
+
+[[Ask for her number]]
