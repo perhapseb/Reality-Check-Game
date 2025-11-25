@@ -111,7 +111,7 @@
         }
 
         // typewriter effect for text display
-        function typeText(element, text, speed = 35) {
+        function typeText(element, text, speed = 25) {
             return new Promise(resolve => {
                 element.textContent = "";
 
@@ -168,9 +168,17 @@
             const error = document.getElementById("error");
 
             if (!p) {
+                
                 text.textContent = "";
                 choices.innerHTML = "";
                 error.textContent = `Could not find the message for dialog option "${name}". Make sure there are no trailing/leading spaces within the dialog choices in the .twee file.`;
+
+                const tryBtn = document.createElement("button");
+                tryBtn.classList.add("try-again");
+                tryBtn.textContent = "reset back to start";
+                tryBtn.onclick = () => RenderPage(story, story.start);
+                choices.appendChild(tryBtn);
+
                 return;
             }
 
@@ -181,22 +189,45 @@
             // bg and char image changing
             function setBackground(url) {
                 document.getElementById("bg-layer").src = url;
+
+                if (url === "") {
+                    document.getElementById("bg-layer").style.display = "none";
+                } else {
+                    document.getElementById("bg-layer").style.display = "block";
+                }
             }
 
             function setCharacter(url) {
                 document.getElementById("char-layer").src = url;
+                if (url === "") {
+                    document.getElementById("char-layer").style.display = "none";
+                } else {
+                    document.getElementById("char-layer").style.display = "block";
+                }
             }
 
             // im just using blank images i made in photoshop for now. when we get the art assets this will look much nicer :)
             setBackground("./Assets/StockRoomExample.png");
 
-            // just testing changing imgs based on who is talkign
             // basically searching the dialogue text for a name. for example we can do "Olivia:" and show the specific image for the Olivia character
-            if (shown.includes("Character Name")) {
-                setCharacter("./Assets/StockCharacterExample.png");
-            }
 
-            setCharacter("./Assets/test1.png");
+            if (shown.includes("Olivia:")) {
+                if (shown.includes("Uhh") || (shown.includes("creep"))) {
+                    setCharacter("./Assets/Olivia/Olivia_Face_Disgusted.png");
+                } else {
+                    setCharacter("./Assets/Olivia/Olivia_Face_Neutral.png");
+                }
+            } else {
+                if (shown.includes("Claire:")) {
+                    if (shown.includes("Uhh") || (shown.includes("creep"))) {
+                        setCharacter("./Assets/Claire/Claire_Face_Disgusted.png");
+                    } else {
+                        setCharacter("./Assets/Claire/Claire_Face_Neutral.png");
+                    }
+                } else {
+                    setCharacter("");
+                }
+            }
 
             // just an example of the character leaving the scene
             if (name === "Bye") {
@@ -214,6 +245,8 @@
                 tryBtn.textContent = "reset back to start";
                 tryBtn.onclick = () => RenderPage(story, story.start);
                 choices.appendChild(tryBtn);
+                setBackground("");
+                setCharacter("");
                 return;
             }
 
