@@ -42,7 +42,7 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 30px;
+    padding: 4vh;
     background: rgba(20, 20, 20, 0.55);
     backdrop-filter: blur(14px);
     border-top: 2px solid rgba(255, 255, 255, 0.1);
@@ -50,15 +50,16 @@ body {
 }
 
 #passage-title {
-    font-size: 1.55rem;
+    font-size: 3vh;
     font-weight: 700;
     margin-bottom: 0px;
 }
 
 #passage-text {
-    font-size: 2rem;
-    line-height: 1.55;
-    margin-bottom: 24px;
+    font-size: 2.2vh;
+    line-height: 3.4vh;
+    padding: 1vh;
+    margin-bottom: 3vh;
     white-space: pre-wrap;
 }
 
@@ -66,19 +67,19 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    min-height: 90px;
+    min-height: 3vh;
 }
 
 #choices button,
 .choice-btn,
 .try-again {
-    min-width: 160px;
-    padding: 18px 22px;
-    font-size: 1.25rem;
+    min-width: 20vh;
+    padding: 2vh 3vh;
+    font-size: 1.7vh;
     font-family: 'Poppins', sans-serif;
     stroke: none;
     font-weight: 600;
-    border: 0.3em solid white;
+    border: 0.4vh solid white;
     background: #333;
     color: white;
     cursor: pointer;
@@ -94,7 +95,7 @@ body {
 }
 
 #error {
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 2.6vh;
+    margin-top: 0.5vh;
     color: #ff6b6b;
 }
