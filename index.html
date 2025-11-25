@@ -111,7 +111,7 @@
         }
 
         // typewriter effect for text display
-        function typeText(element, text, speed = 25) {
+        function typeText(element, text, speed = 35) {
             return new Promise(resolve => {
                 element.textContent = "";
 
@@ -134,8 +134,21 @@
                 // then this is the loop that types each character out
                 function step() {
                     if (i < toType.length) {
-                        element.textContent += toType[i++];
-                        setTimeout(step, speed);
+                        const ch = toType[i++];
+                        element.textContent += ch;
+
+                        let delay = speed;
+
+                        // if blank, instantly type
+                        if (ch === " ") {
+                            delay = 0;
+                        }
+                        // if punctuation, add a bit more delay for pauses
+                        else if (/[.,!?;:…]/.test(ch)) {
+                            delay = speed + 100;
+                        }
+
+                        setTimeout(step, delay);
                     } else {
                         resolve();
                     }
