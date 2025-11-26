@@ -233,6 +233,7 @@
                 tryBtn.textContent = "reset back to start";
                 tryBtn.onclick = () => RenderPage(story, story.start);
                 choices.appendChild(tryBtn);
+                lastSpeaker = "startedstory"
 
                 return;
             }
@@ -337,6 +338,7 @@
                 choices.appendChild(tryBtn);
                 setBackground("");
                 setCharacter("");
+                lastSpeaker = "startedstory"
                 return;
             }
 
