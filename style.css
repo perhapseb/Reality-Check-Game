@@ -44,9 +44,9 @@ body {
     bottom: 0;
     width: 100%;
     padding: 2vh;
-    background: rgba(20, 20, 20, 0.55);
+    background: rgba(255, 255, 255, 0.473);
     backdrop-filter: blur(1vh);
-    border-top: 0.5vh solid rgba(255, 255, 255, 0.1);
+    border-top: 0.5vh solid rgba(255, 255, 255, 0.562);
     z-index: 3;
 }
 
@@ -58,6 +58,8 @@ body {
 
 #passage-text {
     font-size: 2.2vh;
+    color: #333;
+    font-weight: 500;
     line-height: 3.4vh;
     padding: 0.5vh;
     margin-bottom: 2vh;
@@ -73,7 +75,9 @@ body {
 
 #choices button,
 .choice-btn,
-.try-again {
+.try-again,
+#play-btn,
+.btn {
     min-width: 20vh;
     padding: 2vh 3vh;
     font-size: 1.7vh;
@@ -84,11 +88,18 @@ body {
     background: #333;
     color: white;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
-
+/* HOVER EFFECT */
 #choices button:hover,
-.try-again:hover {
-    filter: brightness(1.25);
+.choice-btn:hover,
+.try-again:hover,
+#play-btn:hover,
+.btn:hover {
+    transform: scale(1.07) translateY(-1vh);   /* slight up-scale and slight lift */
+    backdrop-filter: blur(1vh);
+    background: #33333393;
+    box-shadow: 0 0 2vh rgba(255, 255, 255, 0.6); /* glow effect */
 }
 
 .try-again {
@@ -98,4 +109,36 @@ body {
 #error {
     font-size: 2vh;
     color: #ff6b6b;
+}
+
+#main-menu {
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(8px);
+}
+
+#menu-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    object-fit: cover;
+    z-index: -1;
+}
+
+#fade-overlay {
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+    z-index: 9999;
 }
