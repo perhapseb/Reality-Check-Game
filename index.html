@@ -168,7 +168,7 @@
             const error = document.getElementById("error");
 
             if (!p) {
-                
+
                 text.textContent = "";
                 choices.innerHTML = "";
                 error.textContent = `Could not find the message for dialog option "${name}". Make sure there are no trailing/leading spaces within the dialog choices in the .twee file.`;
@@ -213,19 +213,32 @@
 
             if (shown.includes("Olivia:")) {
                 if (shown.includes("Uhh") || (shown.includes("creep"))) {
-                    setCharacter("./Assets/Olivia/Olivia_Face_Disgusted.png");
+                    setCharacter("./Assets/Olivia/Olivia_Disgusted.png");
+                } else if (shown.includes("brushing")) {
+                    setCharacter("./Assets/Olivia/Olivia_Smiling.png");
                 } else {
-                    setCharacter("./Assets/Olivia/Olivia_Face_Neutral.png");
+                    setCharacter("./Assets/Olivia/Olivia_Neutral.png");
                 }
             } else {
-                if (shown.includes("Claire:")) {
-                    if (shown.includes("Uhh") || (shown.includes("creep"))) {
-                        setCharacter("./Assets/Claire/Claire_Face_Disgusted.png");
+                if (shown.includes("Claire")) {
+                    if (shown.includes("Uhh") || (shown.includes("awkward"))) {
+                        setCharacter("./Assets/Claire/Claire_Awkward.png");
+                    } else if (shown.includes("...") || (shown.includes("shrugs"))) {
+                        setCharacter("./Assets/Claire/Claire_Disgusted.png");
                     } else {
-                        setCharacter("./Assets/Claire/Claire_Face_Neutral.png");
+                        setCharacter("./Assets/Claire/Claire_Neutral.png");
                     }
                 } else {
-                    setCharacter("");
+                    if (shown.includes("Camilla:")) {
+                        if (shown.includes("Umm") || (shown.includes("creep"))) {
+                            setCharacter("./Assets/Camilla/Camilla_Awkward.png");
+                        }
+                        else {
+                            setCharacter("./Assets/Camilla/Camilla_Neutral.png");
+                        }
+                    } else {
+                        setCharacter("");
+                    }
                 }
             }
 
