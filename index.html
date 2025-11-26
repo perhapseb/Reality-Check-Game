@@ -207,7 +207,9 @@
             }
 
             // im just using blank images i made in photoshop for now. when we get the art assets this will look much nicer :)
-            setBackground("./Assets/StockRoomExample.png");
+            if (shown.includes("Harbourfront")) {
+                setBackground("./Assets/Backgrounds/Scene1.png");
+            }
 
             // basically searching the dialogue text for a name. for example we can do "Olivia:" and show the specific image for the Olivia character
 
