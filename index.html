@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Reality Check</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -209,6 +210,14 @@
             // im just using blank images i made in photoshop for now. when we get the art assets this will look much nicer :)
             if (shown.includes("Harbourfront")) {
                 setBackground("./Assets/Backgrounds/Scene1.png");
+            }
+
+            if (shown.includes("Imperial")) {
+                setBackground("./Assets/StockRoomExample.png");
+            }
+
+            if (shown.includes("TRSM")) {
+                setBackground("./Assets/StockRoomExample.png");
             }
 
             // basically searching the dialogue text for a name. for example we can do "Olivia:" and show the specific image for the Olivia character
