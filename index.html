@@ -230,7 +230,7 @@
 
                 const tryBtn = document.createElement("button");
                 tryBtn.classList.add("try-again");
-                tryBtn.textContent = "The End. Restart?";
+                tryBtn.textContent = "The End.. Restart?";
                 tryBtn.onclick = () => RenderPage(story, story.start);
                 choices.appendChild(tryBtn);
                 lastSpeaker = "startedstory"
@@ -296,7 +296,7 @@
                     }
                 } else {
                     if (shown.includes("Camilla:")) {
-                        if (shown.includes("Uhh") || (shown.includes("wrong"))) {
+                        if (shown.includes("Uhh") || (shown.includes("wrong")) || (shown.includes("wrong"))) {
                             setCharacter("./Assets/Camilla/Camilla_Awkward.png");
                         }
                         else {
