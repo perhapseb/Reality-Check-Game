@@ -7,86 +7,169 @@ Reality Check Dialogue
   "ifid": "97E9307B-73FE-40E9-902D-FFE1A9C54636",
   "format": "Harlowe",
   "format-version": "3.3.9",
-  "start": "Scenario 1",
+  "start": "Scenario 0",
   "zoom": 1
 }
 
 
-:: *Angrily goes about his day* {"position":"1300,500","size":"100,100"}
-[[Scenario 2]]
-
-
-:: *Avoids her gaze* “H-hey you look like that girl from this anime…” {"position":"1400,800","size":"100,100"}
-*Claire gives him an awkward smile* Thanks…
-
-[[*Incel tries to talk more*]]
-[[*Grabs her*]]
-
-
-:: *Claire smiles, shrugs and walks away* {"position":"1375,1150","size":"100,100"}
-[[Scenario 3]]
-
-
-:: *Grabs her* {"position":"1175,850","size":"100,100"}
-Claire: “...”
-
-[[*Incel gives a weird smile* ]]
-
-
-:: *Incel gives a weird smile*\  {"position":"900,1000","size":"100,100"}
-Claire: Yo dude what is wrong with you?! *hits him with her bag*
-
-[[Incel was too drunk to remember the rest…]]
-
-
-:: *Incel tries to talk more* {"position":"1475,1000","size":"100,100"}
-Claire:
-
-[[*Incel gives a weird smile* ]] 
-[[*Claire smiles, shrugs and walks away*]]
-
-
-:: Ask for her number {"position":"900,500","size":"100,100"}
+:: Ask for her number {"position":"1100,450","size":"100,100"}
 Olivia: “Uhhhh, okay?” *gives him a number to pizza hut*
 
 [[Scenario 2]]
 
 
 :: H-hey babygirl, you look stunning today. {"position":"1300,300","size":"100,100"}
-Olivia: Ugh, get away from me creep! *skates away*
+
+Olivia: Thinks to herself, “What the hell is wrong with this guy?"
  
-[[*Angrily goes about his day*]]
+[[Ask for her number]]
 
 
-:: Incel was too drunk to remember the rest… {"position":"875,1200","size":"100,100"}
+:: I grab her {"position":"1200,1125","size":"100,100"}
+Claire: "What the hell is wrong with you?"
+
+*She hit me....*
+
+[[I walk away]]
+
+
+:: I observe her to assert my dominance {"position":"925,1925","size":"100,100"}
+Camilla; "Uhh may I help you???"
+
+John nearly falls off his seat, after sitting back down,,,
+
+John: "You already did just by sitting here heh.."
+
+Camilla gets up and changes seats.
+
+[[I raise my voice as another one disrespects my honor]]
+
+[[I spit at her]]
+
+
+
+:: I pump up my chest {"position":"1200,1000","size":"100,100"}
+Claire: "Uhhh what?....." 
+
+[[I grab her]]
+
+
+
+
+
+
+
+:: I raise my voice as another one disrespects my honor {"position":"825,2050","size":"100,100"}
+Camilla: "What the hell are you talking about?!"
+
+The Prof walks in to class and has no idea of what transpired.
+
+[[Ill try another day ]]
+
+
+:: I scope the area for the next girl {"position":"1075,750","size":"100,100"}
+John: “Man, what a bummer. Why don’t girls like me? We men, are the people who run the entire world! All women should bow down to us! Hmph. Well, I wanna drink this all away, and plus, the lead singer from the band performing tonight looks like an anime girl… Heh.”
+
+[[I walk up to the singer]]
+
+
+:: I shake my head, Hey arent you the ace of the volleyball team? {"position":"1325,1950","size":"100,100"}
+Camilla: "Uhh yea ha ha"
+
+[[Ill try another day ]]
+
+
+
+:: I show off my jawline by smiling at her {"position":"950,1000","size":"100,100"}
+John gives an unsettling smile. 
+
+Claire: "Yo dude what is wrong with you?!" *hits him with her bag*
+
+[[I was too drunk to remember the rest of the night]]
+
+
+:: I sit down {"position":"1050,1800","size":"100,100"}
+Camilla walks into the lecture hall, she takes a seat near John.
+
+John notices her and mumbles under his breath:
+"Maybe she'll be different then the rest of those females"
+
+[[I observe her to assert my dominance]]
+
+[[I shake my head, Hey arent you the ace of the volleyball team?]]
+
+
+:: I spit at her {"position":"1050,2050","size":"100,100"}
+Camilla: "What is wrong with you?!"
+
+The Prof walks in to class and has no idea of what transpired.
+
+[[Ill try another day ]]
+
+
+:: I walk away {"position":"1200,1275","size":"100,100"}
+John: "Women dont understand what a high value man is"
+
+[[I was too drunk to remember the rest of the night]] 
+
+
+
+:: I walk up to the singer {"position":"1075,875","size":"100,100"}
+John: *Grins while looking up at her* “You play good… you can also play with something else after your gig.” *Winks*
+
+[[I show off my jawline by smiling at her]]
+
+[[I pump up my chest]]
+
+
+
+
+:: I was too drunk to remember the rest of the night {"position":"1050,1325","size":"100,100"}
 [[Scenario 3]]
 
 
-:: Scenario 1 {"position":"1100,100","size":"100,100"}
-Skating rink in Harbourfront, bustling with people of all ages, incel is joined by his other weird friends to “look for hot girls”, spots one.
+:: Ill try another day\  {"position":"1075,2375","size":"100,100"}
 
+
+
+:: Scenario 0 {"position":"1100,50","size":"100,100"}
+Skating rink in Harbourfront, bustling with people of all ages, John is joined by his other weird friends to “look for hot girls.”
+
+[[That girl looks alone. Good. She won’t reject me if she’s alone.]] 
+
+
+:: Scenario 2 {"position":"1100,600","size":"100,100"}
+The Imperial Pub, Many students going for a drink and musicians and bands from TMU are invited to perform open mic. Claire is the guitarist and vocalist for a local Toronto shoegaze band. 
+
+
+[[I scope the area for the next girl]]
+
+
+:: Scenario 3 {"position":"1050,1500","size":"100,100"}
+TRSM: John walks into his lower liberal class hungover because he was so sad that he wasn’t able to bag that asian baddie lmao. Sits next to Camilla, the ace of the TMU volleyball team.
+
+[[Time for round 3]]
+
+
+:: That girl looks alone. Good. She won’t reject me if she’s alone. {"position":"1100,175","size":"100,100"}
 *He nervously goes up to Olivia after some weird fantasy of her across the rink.*
 
-[[Woah! *bumps into Olivia awkwardly*]]
+[[Woah! *I smoothly move to bump into that one to get her attention*]]
 [[H-hey babygirl, you look stunning today.]]
 
 
-:: Scenario 2 {"position":"1100,700","size":"100,100"}
-The Imperial Pub, Many students going for a drink and musicians and bands from TMU are invited to perform open mic. Claire is the guitarist and vocalist for a local Toronto shoegaze band. The incel goes to watch because “she looks like an anime girl”
+:: Time for round 3 {"position":"1050,1675","size":"100,100"}
+John: “Guh. Screw that girl. Society will never understand the struggles of men. They all take us for granted… ugh… Why does my shoulder feel achy?"
 
-*Incel stares too long at Claire, she notices*
-
-[[*Incel gives a weird smile* ]]
-[[*Avoids her gaze* “H-hey you look like that girl from this anime…”]]
-
-
-:: Scenario 3 {"position":"1200,1400","size":"100,100"}
-Setting: TRSM - Incel walks into his lower liberal class hungover because he was so sad that he wasn’t able to bag that asian baddie lmao. Sits next to Camilla, the ace of the TMU volleyball team.
+[[I sit down]]
 
 
 
 
-:: Woah! *bumps into Olivia awkwardly* {"position":"900,300","size":"100,100"}
+
+:: Woah! *I smoothly move to bump into that one to get her attention* {"position":"900,300","size":"100,100"}
+*John bumps into Olivia awkwardly, she quickly checks to see if he's okay.*
+
 Olivia: Hey, you okay? *helps him up after brushing the ice off*
 
 [[Ask for her number]]
