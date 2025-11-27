@@ -226,11 +226,11 @@
                 text.textContent = "";
                 choices.innerHTML = "";
 
-                error.textContent = `Could not find the message for dialog option "${name}". Make sure there are no trailing/leading spaces within the dialog choices in the .twee file.`;
+                // error.textContent = `Could not find the message for dialog option "${name}". Make sure there are no trailing/leading spaces within the dialog choices in the .twee file.`;
 
                 const tryBtn = document.createElement("button");
                 tryBtn.classList.add("try-again");
-                tryBtn.textContent = "reset back to start";
+                tryBtn.textContent = "The End. Restart?";
                 tryBtn.onclick = () => RenderPage(story, story.start);
                 choices.appendChild(tryBtn);
                 lastSpeaker = "startedstory"
@@ -242,12 +242,6 @@
             error.textContent = "";
 
             const shown = ExtractDialogText(p.text);
-            const currentSpeaker = getSpeaker(shown);
-            const speakerChanged = currentSpeaker && currentSpeaker !== lastSpeaker;
-
-            if (speakerChanged || lastSpeaker === "") {
-                await fadeInBlack();
-            }
 
             // bg and char image changing
             function setBackground(url) {
@@ -283,9 +277,8 @@
             }
 
             // basically searching the dialogue text for a name. for example we can do "Olivia:" and show the specific image for the Olivia character
-
             if (shown.includes("Olivia:")) {
-                if (shown.includes("Uhh") || (shown.includes("creep"))) {
+                if (shown.includes("Uhh") || (shown.includes("creep")) || (shown.includes("wrong"))) {
                     setCharacter("./Assets/Olivia/Olivia_Disgusted.png");
                 } else if (shown.includes("brushing")) {
                     setCharacter("./Assets/Olivia/Olivia_Smiling.png");
@@ -296,14 +289,14 @@
                 if (shown.includes("Claire:")) {
                     if (shown.includes("Uhh") || (shown.includes("awkward"))) {
                         setCharacter("./Assets/Claire/Claire_Awkward.png");
-                    } else if (shown.includes("...") || (shown.includes("shrugs"))) {
+                    } else if (shown.includes("...") || (shown.includes("wrong"))) {
                         setCharacter("./Assets/Claire/Claire_Disgusted.png");
                     } else {
                         setCharacter("./Assets/Claire/Claire_Neutral.png");
                     }
                 } else {
                     if (shown.includes("Camilla:")) {
-                        if (shown.includes("Umm") || (shown.includes("creep"))) {
+                        if (shown.includes("Uhh") || (shown.includes("wrong"))) {
                             setCharacter("./Assets/Camilla/Camilla_Awkward.png");
                         }
                         else {
@@ -315,14 +308,8 @@
                 }
             }
 
-            // just an example of the character leaving the scene
-            if (name === "Bye") {
-                setCharacter("");
-            }
-
-            // Update last speaker AFTER character selection
-            if (currentSpeaker) {
-                lastSpeaker = currentSpeaker;
+            if (shown.includes("play good")) {
+                setCharacter("./Assets/Claire/Claire_Awkward.png");
             }
 
             await fadeOutBlack();
@@ -348,16 +335,11 @@
                 btn.classList.add("choice-btn");
                 btn.textContent = link.label;
                 btn.onclick = async () => {
-
                     text.textContent = "";
                     choices.innerHTML = ""; // clear previous choice buttons for the last page
-                    if (link.label.includes("Scenario")) {
-                        await fadeInBlack();
-                        RenderPage(story, link.target);
-                        await fadeOutBlack();
-                    } else {
-                        RenderPage(story, link.target);
-                    }
+                    await fadeInBlack();
+                    RenderPage(story, link.target);
+                    await fadeOutBlack();
                 };
                 choices.appendChild(btn);
             });
